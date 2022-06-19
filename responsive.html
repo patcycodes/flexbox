@@ -1,0 +1,282 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    background:url(../images/bg-intro-desktop.png),hsl(0, 100%, 74%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+/* BIG CONTAINER */
+
+main {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+}
+
+
+/* FIRST CONTAINER */
+
+.first-container {
+    color: white;
+    font-size: 20px;
+}
+
+
+/* H1 */
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+
+/* SECOND CONTAINER */
+
+.second-container {
+    margin: 5px 50px 50px 50px;
+}
+
+
+/* TRY IT FREE */
+
+.try {
+    background-color: hsl(249, 10%, 26%);
+    color: white;
+    height: 65px;
+    text-align: center;
+    padding-top: 26px;
+    background: hsl(248, 32%, 49%);
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0px 9px 0px 0px hsl(35, 30%, 54%);
+    margin-bottom: 25px;
+}
+
+
+/* FORM */
+
+.form {
+    height: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 50px 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 9px 0px 0px hsl(35, 30%, 54%);
+}
+
+
+/* MY FORM */
+
+.myform {
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    height: 60px;
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    border: thin solid #80808075;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+
+/* BUTTON */
+
+.butn {
+    background-color: hsl(154, 59%, 51%);
+    color: white;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.butn:hover {
+    background-color: hsl(154, 72%, 67%);
+    color: white;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.claim {
+    color: hsl(0, 100%, 74%);
+}
+
+
+/* VALIDATION */
+
+input[type="text"]:required:focus,
+input[type="email"]:required:focus,
+input[type="password"]:required:focus {
+    border: 1px solid red;
+    outline: none;
+}
+
+input[type="text"]:focus:invalid,
+input[type=email]:focus:invalid,
+input[type="password"]:focus:invalid {
+    background: url("./icon-error.svg") no-repeat 95% 50%;
+    background-size: 25px;
+    border-color: hsl(0, 100%, 74%);
+    border: 1px solid red;
+}
+
+.input-type:focus {
+    border: 1px solid #aaa;
+}
+
+input:focus:invalid+span::before {
+    display: none;
+    text-align: right;
+}
+
+input:focus:invalid~.err_msg {
+    color: red;
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+}
+
+span.err_msg {
+    display: none;
+}
+
+
+/* MEDIA SCREEN */
+
+
+/*1000PX - MAIN */
+
+@media screen and (max-width: 1000px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+
+/* 700PX - SECOND CONTAINER */
+
+@media screen and (max-width: 700px) {
+    .second-container {
+        margin: 5px 20px 50px 20px;
+    }
+}
+
+
+/*475PX - BODY, MAIN, SECOND CONTAINER, FORM, H1, */
+
+@media screen and (max-width: 475px) {
+    body {
+        background: url(bg-intro-mobile.png), hsl(0, 100%, 74%);
+    }
+    main {
+        flex-direction: column;
+    }
+    .second-container {
+        margin: 5px 10px 50px 10px;
+    }
+    .form {
+        padding: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- BIG CONTAINER -->
+    <main>
+
+        <!-- FIRST CONTAINER -->
+        <div class="first-container">
+            <h1>Learn to code by <br> watching others</h1>
+            <p style="line-height: 30px;">See how experienced developers solve problems in real-time. <br>Watching scripted tutorials is great, but understanding how <br>developers think is invaluable.</p>
+        </div>
+
+        <!-- SECOND CONTAINER -->
+        <div class="second-container">
+
+            <!-- TRY IT FREE -->
+            <p class="try">
+                <strong>Try it free 7 days </strong> then $20/mo. thereafter
+            </p>
+            <!-- FORM -->
+            <form action="/action_page.php" method="get" id="nameform" class="form">
+
+                <!-- MY FORM -->
+                <div class="myform">
+                    <input class="input-type" type="text" required placeholder="First Name">
+                    <span class="err_msg">First Name cannot be empty</span>
+                </div>
+                <div class="myform">
+                    <input class="input-type" type="text" required placeholder="Last Name">
+                    <span class="err_msg">Last Name cannot be empty</span>
+                </div>
+                <div class="myform">
+                    <input class="input-type" type="email" required placeholder="Email">
+                    <span class="err_msg"> Look like this is not an email</span>
+                </div>
+                <div class="myform">
+                    <input class="input-type" type="password" required placeholder="Password">
+                    <span class="err_msg">Password cannot be empty</span>
+                </div>
+
+                <!-- BUTTON -->
+                <button class="butn">CLAIM YOUR FREE TRIAL</button>
+
+                <!-- TERMS AND SERVICE -->
+                <P align="center">
+                    By clicking the button, you are agreeing to our
+                    <strong class="claim">Terms and Services</strong>
+                </P>
+            </form>
+
+
+
+        </div>
+    </main>
+
+</body>
